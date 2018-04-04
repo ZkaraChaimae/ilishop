@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 28, 2018 3:35:50 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="dao.Client" table="CLIENT">
+        <id name="idClient" type="java.lang.Long">
+            <column name="IDCLIENT" />
+            <generator class="native" />
+        </id>
+        <property name="nom" type="java.lang.String">
+            <column name="NOM" />
+        </property>
+        <property name="prenom" type="java.lang.String">
+            <column name="PRENOM" />
+        </property>
+        <property name="telephone" type="java.lang.String">
+            <column name="TELEPHONE" />
+        </property>
+        <property name="Adresse" type="java.lang.String">
+            <column name="ADRESSE" />
+        </property>
+        <property name="Ville" type="java.lang.String">
+            <column name="VILLE" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="EMAIL" />
+        </property>
+        <!-- <one-to-one name="compte" class="dao.Compte"></one-to-one> -->
+        <set name="commandes" table="COMMANDE" inverse="true" cascade="all" lazy="false">
+            <key>
+                <column name="IDCLIENT" />
+            </key>
+            <one-to-many class="dao.Commande" />
+        </set>
+        
+        <!-- <many-to-one name="compte" column="IDCOMPTE" fetch="join" cascade="all" unique="true" 
+         class="dao.Compte" not-null="false"/> -->
+         
+         <one-to-one name="compte" class="dao.Compte" />
+    </class>
+</hibernate-mapping>

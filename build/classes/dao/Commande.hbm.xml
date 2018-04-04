@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 28, 2018 3:35:50 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="dao.Commande" table="COMMANDE">
+        <id name="idCommande" type="java.lang.Long">
+            <column name="IDCOMMANDE" />
+            <generator class="native" />
+        </id>
+        <property name="dateCmd" type="java.util.Date">
+            <column name="DATECMD" />
+        </property>
+        <many-to-one name="client" class="dao.Client" fetch="join">
+            <column name="IDCLIENT" />
+        </many-to-one>
+        <set name="ligneCommandes" table="LIGNECOMMANDE" inverse="true" cascade="all" lazy="false">
+            <key>
+                <column name="IDCOMMANDE" />
+            </key>
+            <one-to-many class="dao.LigneCommande" />
+        </set>
+    </class>
+</hibernate-mapping>

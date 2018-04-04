@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>tp-hibernate</display-name>
+  <servlet>
+    <servlet-name>IndexHandler</servlet-name>
+    <servlet-class>controllers.IndexHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>IndexHandler</servlet-name>
+    <url-pattern>/index</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>PanierHandler</servlet-name>
+    <servlet-class>controllers.PanierHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PanierHandler</servlet-name>
+    <url-pattern>/Panier</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ConnexionHandler</servlet-name>
+    <servlet-class>controllers.ConnexionHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ConnexionHandler</servlet-name>
+    <url-pattern>/Connexion</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>InscriptionHandler</servlet-name>
+    <servlet-class>controllers.InscriptionHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InscriptionHandler</servlet-name>
+    <url-pattern>/Inscription</url-pattern>
+  </servlet-mapping>
+
+  
+  
+  <servlet>
+    <servlet-name>DeconnexionHandler</servlet-name>
+    <servlet-class>controllers.DeconnexionHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeconnexionHandler</servlet-name>
+    <url-pattern>/Deconnexion</url-pattern>
+  </servlet-mapping>
+</web-app>

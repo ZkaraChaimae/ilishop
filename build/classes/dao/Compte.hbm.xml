@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 28, 2018 3:35:50 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="dao.Compte" table="COMPTE">
+        <id name="idCompte" type="java.lang.Long">
+            <column name="IDCOMPTE" />
+            <generator class="native" />
+        </id>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+        <property name="derniereConnex" type="java.util.Date">
+            <column name="DERNIERECONNEX" />
+        </property>
+        
+        <!-- <many-to-one name="client" fetch="join" cascade="all" column="IDCLIENT" unique="true" 
+         class="dao.Client" not-null="true" /> -->
+         <many-to-one name="client" class="dao.Client" column="IDCLIENT" unique="true" not-null="true"/>
+    </class>
+</hibernate-mapping>

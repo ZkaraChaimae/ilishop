@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 28, 2018 3:35:50 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="dao.Produit" table="PRODUIT">
+        <id name="idProduit" type="java.lang.Long">
+            <column name="IDPRODUIT" />
+            <generator class="native" />
+        </id>
+        <property name="libelle" type="java.lang.String">
+            <column name="LIBELLE" />
+        </property>
+        <property name="description" type="java.lang.String">
+            <column name="DESCRIPTION" />
+        </property>
+        <property name="prix" type="java.lang.Double">
+            <column name="PRIX" />
+        </property>
+        <property name="qte" type="int">
+            <column name="QTE" />
+        </property>
+        <many-to-one name="cat" class="dao.Categorie" fetch="join" cascade="all">
+            <column name="ID_CAT" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
